@@ -1,18 +1,9 @@
-<div id="<%= dom_id blog %>">
-  <p>
-    <strong>Title:</strong>
-    <%= blog.title %>
-  </p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= blog.body %>
-  </p>
-
-
-  <p>
-    <strong>Picture:</strong>
-    <%= image_tag(blog.picture_url, width: 600) if blog.picture.present? %>
-  </p>
-
+<div class="card" style="width: 18rem;">
+  <%= image_tag(blog.picture_url, class:"card-img-top") if blog.picture.present? %>
+  <div class="card-body">
+    <h5 class="card-title"><%= blog.title %></h5>
+    <p class="card-text"><%= blog.body %></p>
+    <%= link_to "Show this blog", blog %>
+  </div>
 </div>
